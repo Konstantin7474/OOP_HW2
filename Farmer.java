@@ -1,18 +1,18 @@
-public class Peasant extends BaseHero {
+public class Farmer extends BaseHero {
     private int work;
     private int maxWork;
 
     private int xCor;
     private int yCor;
 
-    public Peasant() {
-        super(String.format("Hero_Peasant #%d", ++Peasant.number),
+    public Farmer() {
+        super(String.format("Hero_Farmer #%d", ++Farmer.number),
                 Peasant.r.nextInt(100, 200));
         this.maxWork = Peasant.r.nextInt(50, 150);
         this.work = maxWork;
 
-        this.xCor = Peasant.r.nextInt(0,150);
-        this.yCor  = Peasant.r.nextInt(0,150);
+        this.xCor = Farmer.r.nextInt(0,150);
+        this.yCor  = Farmer.r.nextInt(0,150);
     }
 
     public String getInfo() {
@@ -22,7 +22,6 @@ public class Peasant extends BaseHero {
     public int getXCor() {
         return xCor;
     }
-
 
     public int getYCor() {
         return yCor;
