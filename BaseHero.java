@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public abstract class BaseHero  {
+public abstract class BaseHero {
     protected static int number;
     protected static Random r;
 
@@ -15,7 +15,6 @@ public abstract class BaseHero  {
     }
 
 
-
     public BaseHero(String name, int hp) {
         this.name = name;
         this.hp = hp;
@@ -25,7 +24,7 @@ public abstract class BaseHero  {
 
 
     public String getInfo() {
-        return String.format("Name: %s  Hp: %d  Type: %s ",
+        return String.format("Name: %s  Hp: %d  Type: %s  ",
                 this.name, this.hp, this.getClass().getSimpleName());
     }
 
@@ -34,3 +33,4 @@ public abstract class BaseHero  {
     public abstract int getYCor();
 
 }
+
