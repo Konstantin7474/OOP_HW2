@@ -1,33 +1,26 @@
+import java.util.ArrayList;
+
 public class Peasant extends BaseHero {
-    private int work;
-    private int maxWork;
+    protected static int number = 0;
 
-    private int xCor;
-    private int yCor;
-
-
-    public Peasant(Class<? extends Program> name, int i, int i1) {
-        super(String.format("Hero_Peasant #%d", ++Peasant.number),
-                Peasant.r.nextInt(100, 200));
-        this.maxWork = Peasant.r.nextInt(50, 150);
-        this.work = maxWork;
-
-        this.xCor = Peasant.r.nextInt(0,150);
-        this.yCor  = Peasant.r.nextInt(0,150);
-
+    public Peasant(int qty, int x, int y) {
+        super(qty,
+                x,
+                y,
+                ++Peasant.number,
+                Skills.Peasant.NAME,
+                Skills.Peasant.MAX_HP,
+                Skills.Peasant.ATTACK,
+                Skills.Peasant.DEFENCE,
+                Skills.Peasant.MIN_DAMAGE,
+                Skills.Peasant.MAX_DAMAGE,
+                Skills.Peasant.COST,
+                Skills.Peasant.IMITIATIVE);
     }
 
-    public String getInfo() {
-        return String.format("%s  Work: %d Position: X%d, Y%d", super.getInfo(), this.work, this.xCor, this.yCor);
+    @Override
+    public void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> allies) {
+        if (hp <= 0) return;
+        action = Actions.waiting;
     }
-
-    public int getXCor() {
-        return xCor;
-    }
-
-
-    public int getYCor() {
-        return yCor;
-    }
-
 }

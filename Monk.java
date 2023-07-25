@@ -1,38 +1,19 @@
-public class Monk extends BaseHero {
-    private int prayer;
-    private int maxPrayer;
+public class Monk extends Medico {
+    protected static int number = 0;
 
-    private int speed;
-    private int maxSpeed;
-
-    private int xCor;
-    private int yCor;
-
-
-    public Monk(Class<? extends Program> name, int i, int i1) {
-        super(String.format("Hero_Monk #%d", ++Monk.number),
-                Monk.r.nextInt(100, 200));
-        this.maxPrayer = Monk.r.nextInt(50, 150);
-        this.prayer = maxPrayer;
-
-        this.maxSpeed = Monk.r.nextInt(0, 15);
-        this.speed = maxSpeed;
-
-        this.xCor = Monk.r.nextInt(0,150);
-        this.yCor  = Monk.r.nextInt(0,150);
-
+    public Monk(int qty, int x, int y) {
+        super(qty,
+                x,
+                y,
+                ++Monk.number,
+                Skills.Monk.NAME,
+                Skills.Monk.MAX_HP,
+                Skills.Monk.ATTACK,
+                Skills.Monk.DEFENCE,
+                Skills.Monk.MIN_DAMAGE,
+                Skills.Monk.MAX_DAMAGE,
+                Skills.Monk.COST,
+                Skills.Monk.IMITIATIVE,
+                Skills.Monk.MAX_SHOOTS, Skills.Monk.HEALING);
     }
-
-    public String getInfo() {
-        return String.format("%s  Prayer: %d Position: X%d, Y%d Speed: %d", super.getInfo(), this.prayer, this.xCor, this.yCor, this.speed);
-    }
-
-    public int getXCor() {
-        return xCor;
-    }
-
-    public int getYCor() {
-        return yCor;
-    }
-
 }

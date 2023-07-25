@@ -1,18 +1,8 @@
+import java.util.ArrayList;
+
 public interface Interface {
+    String getInfo();
 
-    public default void step() {
-        System.out.println( getClass() + " прощел еще немного... " );
-    }
-
-    public default void step( String direction ) {
-        System.out.println( getClass() + " прощел " + direction + " еще немного... " );
-    }
-    public default void stepUp()    { this.step( "вперед" ); }
-    public default void stepDown()  { this.step( "назад" ); }
-    public default void stepLeft()  { this.step( "влево" ); }
-    public default void stepRight() { this.step( "вправо" ); }
-
-    default String getInfo() {
-        return getClass().getSimpleName();
-    }
+    void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> allies);
 }
+

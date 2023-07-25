@@ -1,39 +1,19 @@
-public class Mag extends BaseHero {
-    private int mana;
-    private int maxMana;
+public class Mag extends Medico {
+    protected static int number = 0;
 
-    private int speed;
-    private int maxSpeed;
-
-
-    private int xCor;
-    private int yCor;
-
-
-    public Mag(Class<? extends Program> name, int i, int i1) {
-        super(String.format("Hero_Mag #%d", ++Mag.number),
-                Mag.r.nextInt(100, 200));
-        this.maxMana = Mag.r.nextInt(50, 150);
-        this.mana = maxMana;
-        this.maxSpeed = Mag.r.nextInt(0, 15);
-        this.speed = maxSpeed;
-        this.xCor = Mag.r.nextInt(0,150);
-        this.yCor  = Mag.r.nextInt(0,150);
-
+    public Mag(int qty, int x, int y) {
+        super(qty,
+                x,
+                y,
+                ++Mag.number,
+                Skills.Mag.NAME,
+                Skills.Mag.MAX_HP,
+                Skills.Mag.ATTACK,
+                Skills.Mag.DEFENCE,
+                Skills.Mag.MIN_DAMAGE,
+                Skills.Mag.MAX_DAMAGE,
+                Skills.Mag.COST,
+                Skills.Mag.IMITIATIVE,
+                Skills.Mag.MAX_SHOOTS, Skills.Mag.HEALING);
     }
-
-    public String getInfo() {
-        return String.format("%s Mana: %d Position: X%d, Y%d Speed: %d",super.getInfo(), this.mana, this.xCor, this.yCor, this.speed);
-    }
-
-
-    public int getXCor() {
-        return xCor;
-    }
-
-
-    public int getYCor() {
-        return yCor;
-    }
-
 }
