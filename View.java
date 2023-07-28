@@ -24,7 +24,7 @@ public class View {
     }
     private static String getChar(int x, int y){
         String out = "|  ";
-        for (BaseHero creature: Program.allCreatures) {
+        for (BaseHero creature: Program.allHeroes) {
             if (creature.getPosition().equals(new Position(x, y))){
                 if (creature.getHp() == 0) {
                     out = "|" + (AnsiColors.ANSI_RED + creature.toChar() + AnsiColors.ANSI_RESET);
@@ -44,7 +44,7 @@ public class View {
             System.out.print(AnsiColors.ANSI_YELLOW + "Шаг " + step + " " + AnsiColors.ANSI_RESET);
         }
         step++;
-        Program.allCreatures.forEach((v) -> l[0] = Math.max(l[0], v.getInfo().length()));
+        Program.allHeroes.forEach((v) -> l[0] = Math.max(l[0], v.getInfo().length()));
         System.out.print("_".repeat(l[0]*3));
         System.out.println("");
         System.out.print(top10 + "    ");

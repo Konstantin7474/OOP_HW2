@@ -1,4 +1,4 @@
-public class Spearman extends BaseHero {
+public class Spearman extends Walkers {
     protected static int number = 0;
 
     public Spearman(int qty, int x, int y) {

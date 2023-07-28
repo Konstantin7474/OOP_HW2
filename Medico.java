@@ -1,24 +1,24 @@
 import java.util.ArrayList;
 
 public abstract class Medico extends Shooter {
-    private int healing;
+    private int healing;  // Лечение
 
     protected Medico(int qty, int x, int y, int number, String name, int maxHp, int attack, int defense, int minDamage, int maxDamage, int cost, int initiative, int maxShoots, int healing) {
         super(qty, x, y, number, name, maxHp, attack, defense, minDamage, maxDamage, cost, initiative, maxShoots);
         this.healing = healing;
     }
 
-    protected BaseHero findMostPainful(ArrayList<BaseHero> creatures) {
-        int maxPainful = creatures.get(0).maxHp - creatures.get(0).hp;
+    protected BaseHero findMostPainful(ArrayList<BaseHero> heroes) {
+        int maxPainful = heroes.get(0).maxHp - heroes.get(0).hp;
         int numberMostPainful = 0;
-        for (int i = 0; i < creatures.size(); i++) {
-            int painful = creatures.get(i).maxHp - creatures.get(i).hp;
+        for (int i = 0; i < heroes.size(); i++) {
+            int painful = heroes.get(i).maxHp - heroes.get(i).hp;
             if (painful > maxPainful) {
                 maxPainful = painful;
                 numberMostPainful = i;
             }
         }
-        if (maxPainful != 0) return creatures.get(numberMostPainful);
+        if (maxPainful != 0) return heroes.get(numberMostPainful);
         else return null;
     }
 
